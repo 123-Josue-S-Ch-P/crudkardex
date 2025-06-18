@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2>EDITAR REGISTRO</h2>
+    </div>
+    <div class="card-body">
+        <form action="{{ url_for('persona_edit', id=personal['id']) }}" method="POST">
+            <input type="hidden" name="id" value="{{ personal['id'] }}">
+            <div class="mb-3">
+                <label for="" class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="nombre" value="{{ personal['nombre'] }}">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Telefono</label>
+                <input type="text" class="form-control" name="telefono" value="{{ personal['telefono'] }}">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Fecha nacimiento</label>
+                <input type="date" class="form-control" name="fecha_nac" value="{{ personal['fecha_nac'] }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
